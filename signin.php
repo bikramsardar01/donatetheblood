@@ -1,7 +1,14 @@
 <?php 
 
+	
+
 	//include header file
 	include ('include/header.php');
+
+	if(isset($_SESSION['user_id']))
+	{
+		header('Location: index.php');
+	}
 
 	if(isset($_POST['SignIn'])){
 
