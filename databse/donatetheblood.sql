@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2023 at 06:07 PM
+-- Generation Time: Sep 24, 2023 at 04:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -47,7 +47,7 @@ CREATE TABLE `donor` (
 
 INSERT INTO `donor` (`id`, `name`, `gender`, `email`, `city`, `dob`, `contact_no`, `save_life_date`, `password`, `blood_group`, `type`) VALUES
 (8, 'Bharat thapa', 'Male', 'bharat12@gmail.com', 'Lalitpur', '1999-02-31', '9842302504', '2023-07-30', 'dfb57b2e5f36c1f893dbc12dd66897d4', 'A+', 'user'),
-(10, 'Bikram sardar', 'Male', 'bikramsardar706@gmail.com', 'Morang', '1999-11-28', '9805948695', '2023-12-01', '268b3295ebcc4f4ff2181ab92149a1b5', 'AB+', 'user'),
+(10, 'Bikram sardar', 'Male', 'bikramsardar706@gmail.com', 'Morang', '1999-11-28', '9805948695', '2023-12-01', '268b3295ebcc4f4ff2181ab92149a1b5', 'AB+', 'admin'),
 (11, 'Umesh ', 'Male', 'umesh11@gmail.com', 'Jhapa', '1999-12-30', '9803863211', '2023-08-08', 'a6b0d7147620cdaec38ef27a045afafa', 'B+', 'user'),
 (12, 'Radhe ', 'Male', 'radhe22@gmail.com', 'Dhulikhel', '1957-02-27', '9807777777', '2023-08-08', 'ba5588cec80a9fad1e18c9e643d4db90', 'AB+', 'user'),
 (13, 'Samir Thapaliya', 'Male', 'samir11@gmail.com', 'Kathmandu', '1968-01-13', '9800000000', '2023-08-17', '22c77791e8db26ba90de4414dfcf0da1', 'A+', 'user'),
