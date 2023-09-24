@@ -118,6 +118,8 @@
 					<span>'.$row['city'].'</span>
 					<span>'.$row['blood_group'].'</span>
 					<span>'.$row['gender'].'</span>
+					<span> Donated date '.$row['save_life_date'].'</span>
+					<span>'.$row['contact_no'].'</span>
 					<h4 class="name text-center">Donated</h4>
 					</div>';
 					 }
