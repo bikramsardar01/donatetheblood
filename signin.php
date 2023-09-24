@@ -1,7 +1,5 @@
 <?php 
 
-	
-
 	//include header file
 	include ('include/header.php');
 
@@ -54,6 +52,7 @@
 
 					$_SESSION['user_id'] = $row['id'];
 					$_SESSION['name'] = $row['name'];
+					$_SESSION['type']=$row['type'];
 					$_SESSION['save_life_date'] = $row['save_life_date'];
 
 					header('Location: user/index.php');

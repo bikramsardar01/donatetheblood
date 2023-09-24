@@ -38,12 +38,20 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           
-          <a class="dropdown-item" href="user/index.php"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+          <?php
+            // Check if the logged-in user is an admin
+            if(isset($_SESSION['email']) && $_SESSION['type'] == 'admin'){
+              echo '<a class="dropdown-item" href="admin/dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>';
+            }
+            else{
+              echo'<a class="dropdown-item" href="user/index.php"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
 
-          <a class="dropdown-item" href="user/update.php"><i class="fa fa-edit" aria-hidden="true"></i>Update Profile</a>
-
-          <a class="dropdown-item" href="user/logout.php">
-          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Logout</a>
+              <a class="dropdown-item" href="user/update.php"><i class="fa fa-edit" aria-hidden="true"></i>Update Profile</a>
+    
+              <a class="dropdown-item" href="user/logout.php">
+              <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Logout</a>';
+            }
+          ?>
           </div>
       </li>
     
