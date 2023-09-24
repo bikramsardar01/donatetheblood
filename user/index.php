@@ -140,7 +140,7 @@
 
 										echo '<div class="donors_data">
 									<span class="name">Congratulation!</span>
-									<span>You Already Safe the life. You will donate the blood
+									<span>You Already Save the life. You will donate the blood
 									after three months. We are very thanking full to you.</span>
 									</div>';
 

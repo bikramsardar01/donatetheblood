@@ -37,6 +37,12 @@
         <?php if(isset($_SESSION['name'])) echo $_SESSION['name']; ?><!-- Donor Name -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        <?php 
+          if(isset($_SESSION['name']) && $_SESSION['type'] == 'admin'){
+            echo '<a class="dropdown-item" href="./index.php"><i class="fa fa-user" aria-hidden="true"></i> Dashboard</a>';
+          } 
+          ?>
           
           <a class="dropdown-item" href="./index.php"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
 
