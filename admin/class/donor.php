@@ -13,6 +13,7 @@ class Donor
 	private $password;
     private $blood_group;
 	private $type;
+	private $status;
 	private $conn;
 	
 	function __construct()
@@ -32,13 +33,14 @@ class Donor
 		$this->password = $pw;
         $this->blood_group = $bg;
 		$this->type = $t;
+		$this->status = 'pending';
 	}
 	
 	public function registerDonor(){
 		$qry = "INSERT INTO donor VALUES ('','$this->name',
 		'$this->gender', '$this->email', '$this->city', 
 		'$this->dob', '$this->contact_no', '$this->save_life_date', '$this->password',
-        '$this->blood_group', '$this->type')";
+        '$this->blood_group', '$this->type', '$this->status')";
 		return $this->conn->iud($qry);
 	}
 	
@@ -65,9 +67,9 @@ class Donor
 	}
 	
 	
-	public function updateDonor($n, $g, $e, $c, $dob, $co, $s, $pw, $bg, $t, $id){
+	public function updateDonor($n, $g, $e, $c, $dob, $co, $s, $pw, $bg, $t, $st, $id){
 		$qry = "UPDATE donor SET name='$n', gender=$g, email='$e', city='$c', 
-				dob = '$dob', contact_no=$co, save_life_date=$s, password = '$pw', blood_group=$bg, type = '$t';
+				dob = '$dob', contact_no=$co, save_life_date=$s, password = '$pw', blood_group=$bg, type = '$t', status = '$st';
 				WHERE id = $id";
 		$this->conn->iud($qry);
 	}

@@ -120,7 +120,7 @@
 					<span>'.$row['gender'].'</span>
 					<span> Donated date '.$row['save_life_date'].'</span>
 					<span>'.$row['contact_no'].'</span>
-					<h4 class="name text-center">Donated</h4>
+					<h4 class="name text-center">'.$row['status'].'</h4>
 					</div>';
 					 }
 				}

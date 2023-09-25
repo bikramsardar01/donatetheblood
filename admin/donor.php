@@ -8,7 +8,7 @@ require 'class/donor.php';
 $dnr = New Donor(); 
 if(isset($_POST['btnAdd'])) {
 	$dnr->setValue($_POST['name'], $_POST['gender'], $_POST['email'], $_POST['city'], $_POST['dob'], $_POST['contact_no'], $_POST['save_life_date'], $_POST['password'],
-    $_POST['blood_group'], $_POST['type']); 
+    $_POST['blood_group'], $_POST['type'], $_POST['status']); 
 	if($dnr->registerDonor()) { 
 		echo '<script> alert("Registered successfully")</script>';
 	 } 
@@ -18,7 +18,7 @@ if(isset($_POST['btnAdd'])) {
 if(isset($_POST['btnUpdate'])) 
 { 
 	$dnr->updateDonor($_POST['name'], $_POST['gender'], $_POST['email'], $_POST['city'], $_POST['dob'], $_POST['contact_no'], $_POST['save_life_date'], $_POST['password'],
-    $_POST['blood_group'], $_POST['type'], $_GET['eid']);
+    $_POST['blood_group'], $_POST['type'], $_POST['status'], $_GET['eid']);
 	echo '<script>alert("User updated successfully!")</script>';
 }
 require_once 'class/Donor.php';
@@ -112,6 +112,16 @@ $data= $seek->selectDonor();
 						<option value="admin" <?php if(isset($_GET['eid']) && $selected[0]['type'] == 'admin'){ echo 'selected'; } ?>>Admin</option>
 						</select>
 						</div>
+
+						<div class="mb-3">
+					<select name="type" class="form-control">
+						<option selected disabled>select</option>
+						<option value="donated" <?php if(isset($_GET['eid']) && $selected[0]['type'] == 'donated'){ echo 'selected'; } ?>>donated</option>
+						<option value="pending" <?php if(isset($_GET['eid']) && $selected[0]['type'] == 'pending'){ echo 'selected'; } ?>>pending</option>
+						<option value="not donated" <?php if(isset($_GET['eid']) && $selected[0]['type'] == 'not donated'){ echo 'selected'; } ?>>not donated</option>
+						</select>
+						</div>
+
 					<div class="mb-3">
 						<input type="submit" class="btn btn-primary" name="btnAdd" value="Add">
 						<input type="submit" class="btn btn-primary" name="btnUpdate" value="Update">
@@ -133,6 +143,7 @@ $data= $seek->selectDonor();
                                 <th>Password</th>
                                 <th>Blood_group</th>
                                 <th>Type</th>
+								<th>Status</th>
 						        <th>Edit</th>
 								<th>Delete</th>
 							</tr>
@@ -154,6 +165,7 @@ $data= $seek->selectDonor();
                                     <td>".$js['password']."</td>
                                     <td>".$js['blood_group']."</td>
                                     <td>".$js['type']."</td>
+									<td>".$js['status']."</td>
 									<td><a href='donor.php?eid=".$js['id']."' class='btn btn-primary'>Edit</a></td>
 									<td><a href='donor.php?did=".$js['id']."' class='btn btn-danger' 
 										onclick='return confirm(&quot;Are you sure?&quot;)'>Delete</a></td>
