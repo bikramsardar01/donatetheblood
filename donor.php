@@ -8,7 +8,6 @@ include('include/header.php');
 	.size {
 		min-height: 0px;
 		padding: 60px 0 40px 0;
-
 	}
 
 	.loader {
@@ -62,6 +61,7 @@ include('include/header.php');
 		-moz-box-shadow: 0px 2px 5px -2px rgba(89, 89, 89, 0.95);
 		box-shadow: 0px 2px 5px -2px rgba(89, 89, 89, 0.95);
 		padding: 20px;
+		width: 100%;
 	}
 </style>
 <div class="container-fluid red-background size">
@@ -89,7 +89,8 @@ include('include/header.php');
 				if ($row['save_life_date'] == '0') {
 
 
-					echo '<div class="col-md-3 col-sm-12 col-lg-3 donors_data">
+					echo '<div class="col-md-3 col-sm-12 col-lg-4 ">
+					<div class="donors_data">
 					<span class="name">' . $row['name'] . '</span>
 					<span>' . $row['city'] . '</span>
 					<span>' . $row['blood_group'] . '</span>
@@ -97,7 +98,7 @@ include('include/header.php');
 					<span>' . $row['email'] . '</span>
 					<span>' . $row['contact_no'] . '</span>
 					<h4 class="name text-center">' . $row['status'] . '</h4>
-
+					</div>
 					</div>';
 				} else {
 
@@ -110,19 +111,22 @@ include('include/header.php');
 
 					if ($diffMonth >= 3) {
 
-						echo '<div class="col-md-3 col-sm-12 col-lg-3 donors_data">
+						echo '<div class="col-md-3 col-sm-12 col-lg-4 ">
+						<div class="donors_data">
 										<span class="name">' . $row['name'] . '</span>
 										<span>' . $row['city'] . '</span>
 										<span>' . $row['blood_group'] . '</span>
 										<span>' . $row['gender'] . '</span>
 										<span>' . $row['email'] . '</span>
 										<span>' . $row['contact_no'] . '</span>
+										</div>
 										</div>';
 					} else {
 
 						echo '
 					
-					<div class="col-md-3 col-sm-12 col-lg-3 donors_data">
+					<div class="col-md-3 col-sm-12 col-lg-4">
+					<div class="donors_data">
 					<span class="name">' . $row['name'] . '</span>
 					<span>' . $row['city'] . '</span>
 					<span>' . $row['blood_group'] . '</span>
@@ -130,6 +134,7 @@ include('include/header.php');
 					<span> Donated date ' . $row['save_life_date'] . '</span>
 					<span>' . $row['contact_no'] . '</span>
 					<h4 class="name text-center">' . $row['status'] . '</h4>
+					</div>
 					</div>';
 					}
 				}
